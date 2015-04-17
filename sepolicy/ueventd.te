@@ -1,1 +1,1 @@
-allow ueventd sysfs:file { relabelto };
+allow ueventd emmcblk_device:blk_file create_file_perms;

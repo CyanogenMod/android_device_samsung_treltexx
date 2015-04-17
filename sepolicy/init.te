@@ -1,0 +1,7 @@
+domain_trans(init, rootfs, cpboot-daemon)
+domain_trans(init, rootfs, exyrngd)
+# FIXME neverallow rule
+#domain_trans(init, system_file, exyrngd)
+#domain_trans(init, system_file, gpsd)
+
+allow init emmcblk_device:blk_file rw_file_perms;
