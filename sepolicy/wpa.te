@@ -1,3 +1,6 @@
 allow wpa efs_file:file { read open };
 allow wpa efs_file:dir search;
-allow wpa system_data_file:file open;
+allow wpa system_data_file:file rw_file_perms;
+allow wpa rfkill_device:chr_file r_file_perms;
+allow wpa wifi_efs_file:file r_file_perms;
+allow wpa wifi_efs_file:file r_file_perms;

@@ -16,3 +16,5 @@ allow cpboot-daemon kernel:system syslog_read;
 allow cpboot-daemon cgroup:dir create_dir_perms;
 allow cpboot-daemon radio_device:chr_file rw_file_perms;
 allow cpboot-daemon emmcblk_device:blk_file r_file_perms;
+allow cpboot-daemon kmsg_device:chr_file rw_file_perms;
+allow cpboot-daemon sysfs:file rw_file_perms;

@@ -3,8 +3,12 @@
 #
 /dev/mali[0-9]*         u:object_r:gpu_device:s0
 
+/dev/seiren             u:object_r:seiren_device:s0
+
 /dev/bcm2079x           u:object_r:nfc_device:s0
 /dev/sec-nfc            u:object_r:nfc_device:s0
+
+/dev/ttySAC3            u:object_r:bluetooth_device:s0
 
 /dev/s5p-smem           u:object_r:tee_device:s0
 /dev/mobicore           u:object_r:tee_device:s0
@@ -21,6 +25,8 @@
 /dev/ttySAC[0-9]*       u:object_r:gps_device:s0
 
 /dev/block/mmcblk0p[0-9]*    u:object_r:emmcblk_device:s0
+
+/dev/rfkill             u:object_r:rfkill_device:s0
 
 ####################################
 # efs files
@@ -49,9 +55,13 @@
 /sys/class/devfreq/exynos5-busfreq-mif(/.*)? -- u:object_r:sysfs_writable:s0
 /sys/class/lcd(/.*)?    -- u:object_r:sysfs_writable:s0
 
+/sys/class/rfkill/(\.*)? u:object_r:rfkill_sysfs_file:s0
+
 /data/nfc               u:object_r:nfc_data_file:s0
 
 /system/bin/mcDriverDaemon  --  u:object_r:tee_exec:s0
 /system/bin/macloader       --  u:object_r:macloader_exec:s0
 
-/sbin/exyrngd               --  u:object_r:exyrngd_exec:s0
+/system/bin/exyrngd         --  u:object_r:exyrngd_exec:s0
+/system/bin/cbd             --  u:object_r:cpboot-daemon_exec:s0
+/system/bin/gpsd            --  u:object_r:gpsd_exec:s0
