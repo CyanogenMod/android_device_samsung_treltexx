@@ -11,3 +11,7 @@ allow macloader shell_exec:file rx_file_perms;
 allow macloader system_data_file:file { create_file_perms };
 allow macloader system_file:file execute_no_trans;
 allow macloader system_data_file:dir rw_dir_perms;
+# /sys/module/dhd/parameters/nvram_path
+allow macloader sysfs:file rw_file_perms;
+# /efs/wifi/.mac.info
+allow macloader wifi_efs_file:file r_file_perms;

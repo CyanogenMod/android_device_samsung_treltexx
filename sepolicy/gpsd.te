@@ -5,7 +5,11 @@
 file_type_auto_trans(gpsd, system_data_file, gps_data_file)
 unix_socket_connect(gpsd, property, rild)
 
+allow gpsd system_server:unix_stream_socket { read write setopt };
+
 binder_call(gpsd, system_server)
+binder_use(gpsd)
+
 allow gpsd sysfs_wake_lock:file rw_file_perms;
 allow gpsd system_data_file:fifo_file rw_file_perms;
 allow gpsd system_data_file:file { lock rw_file_perms };
