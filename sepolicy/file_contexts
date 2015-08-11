@@ -55,7 +55,9 @@
 /sys/class/devfreq/exynos5-busfreq-mif(/.*)? -- u:object_r:sysfs_writable:s0
 /sys/class/lcd(/.*)?    -- u:object_r:sysfs_writable:s0
 
-/sys/class/rfkill/(\.*)? u:object_r:rfkill_sysfs_file:s0
+# bluetooth
+/sys/class/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
+/sys/class/rfkill/rfkill0/type  u:object_r:sysfs_bluetooth_writable:s0
 
 /data/nfc               u:object_r:nfc_data_file:s0
 

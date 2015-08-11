@@ -13,3 +13,7 @@ allow rild emmcblk_device:blk_file r_file_perms;
 
 allow rild gpsd:dir r_dir_perms;
 allow rild gpsd:file r_file_perms;
+
+# rild reads /proc/pid/cmdline of mediaserver
+allow rild mediaserver:dir { open read search getattr };
+allow rild mediaserver:file { open read getattr };
