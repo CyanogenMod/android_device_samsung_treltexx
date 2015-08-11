@@ -8,7 +8,6 @@ type baro_delta_factoryapp_efs_file, file_type;
 type factorymode_factoryapp_efs_file, file_type;
 type radio_factoryapp_efs_file, file_type;
 type rfkill_device, dev_type;
-type rfkill_sysfs_file, file_type;
 type emmcblk_device, file_type;
 type seiren_device, dev_type;
 

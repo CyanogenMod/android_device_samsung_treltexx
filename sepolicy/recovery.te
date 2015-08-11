@@ -7,15 +7,31 @@ recovery_only(`
   allow recovery vold_prop:property_service set;
 
   allow recovery emmcblk_device:dir r_dir_perms;
-  allow recovery dm_device:chr_file { read write getattr ioctl };
+  allow recovery emmcblk_device:blk_file rw_file_perms;
+  allow recovery dm_device:chr_file r_file_perms;
   allow recovery mtp_device:chr_file rw_file_perms;
+  allow recovery properties_device:file rw_file_perms link_file_perms;
 
   allow recovery device:dir rw_dir_perms;
-  allow recovery device:file rw_file_perms;
+  allow recovery device:file create_file_perms;
+
+  allow recovery init:dir r_dir_perms;
+  allow recovery init:file r_file_perms;
+  allow recovery healthd:dir r_dir_perms;
+  allow recovery healthd:file r_file_perms;
+  allow recovery kernel:dir r_dir_perms;
+  allow recovery kernel:file r_file_perms;
+  allow recovery su:dir r_dir_perms;
+  allow recovery su:file r_file_perms;
+  allow recovery ueventd:dir r_dir_perms;
+  allow recovery ueventd:file r_file_perms;
 
   allow recovery tmpfs:chr_file rw_file_perms;
-  allow recovery rootfs:lnk_file { create rename unlink };
-  allow recovery rootfs:fifo_file r_file_perms;
+  allow recovery rootfs:lnk_file create_file_perms;
+  allow recovery rootfs:fifo_file create_file_perms;
+
+  allow recovery vfat:dir rw_dir_perms;
+  allow recovery vfat:file create_file_perms;
 
   allow recovery media_rw_data_file:file rw_file_perms;
   allow recovery media_rw_data_file:{ dir file lnk_file } { setattr relabelto relabelfrom };
