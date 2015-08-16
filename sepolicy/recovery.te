@@ -8,9 +8,9 @@ recovery_only(`
 
   allow recovery emmcblk_device:dir r_dir_perms;
   allow recovery emmcblk_device:blk_file rw_file_perms;
-  allow recovery dm_device:chr_file r_file_perms;
+  allow recovery dm_device:chr_file rw_file_perms;
   allow recovery mtp_device:chr_file rw_file_perms;
-  allow recovery properties_device:file rw_file_perms link_file_perms;
+  allow recovery properties_device:file { rw_file_perms link_file_perms };
 
   allow recovery device:dir rw_dir_perms;
   allow recovery device:file create_file_perms;
