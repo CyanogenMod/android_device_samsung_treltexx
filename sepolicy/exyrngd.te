@@ -7,4 +7,5 @@ allow exyrngd self:capability sys_admin;
 allow exyrngd tmpfs:chr_file rw_file_perms;
 
 # FIXME neverallow rule ...
-#allow exyrngd hw_random_device:chr_file rw_file_perms;
+#allow exyrngd hw_random_device:chr_file r_file_perms;
+allow exyrngd random_device:chr_file rw_file_perms;
