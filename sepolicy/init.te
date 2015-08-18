@@ -1,8 +1,5 @@
 domain_trans(init, rootfs, cpboot-daemon)
-domain_trans(init, rootfs, exyrngd)
-
 domain_trans(init, cpboot-daemon_exec, cpboot-daemon)
-domain_trans(init, exyrngd_exec, exyrngd)
 domain_trans(init, gpsd_exec, gpsd)
 
 # /dev/block/mmcblk0p[0-9]
