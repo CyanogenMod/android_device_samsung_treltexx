@@ -46,157 +46,219 @@ enum {
 
 struct route_config {
     const char * const output_route;
+    const char * const output_device;
     const char * const input_route;
+    const char * const input_device;
 };
 
 const struct route_config voice_speaker = {
     "voice-speaker",
-    "voice-speaker-main-mic"
+    "device-speaker",
+    "voice-speaker-main-mic",
+    "device-two-mic",
 };
 
 const struct route_config voice_speaker_wb = {
     "voice-speaker-wb",
-    "voice-speaker-main-mic-wb"
+    "device-speaker",
+    "voice-speaker-main-mic-wb",
+    "device-two-mic",
 };
 
 const struct route_config voice_earpiece = {
     "voice-earpiece",
-    "voice-earpiece-main-mic"
+    "device-earpiece",
+    "voice-earpiece-main-mic",
+    "device-two-mic",
 };
 
 const struct route_config voice_earpiece_wb = {
     "voice-earpiece-wb",
-    "voice-earpiece-main-mic-wb"
+    "device-earpiece",
+    "voice-earpiece-main-mic-wb",
+    "device-two-mic",
 };
 
 const struct route_config voice_headphones = {
     "voice-headphones",
-    "voice-earpiece-main-mic"
+    "device-headphones",
+    "voice-headphones-main-mic", /* FIXME */
+    "FIXME",
 };
 
 const struct route_config voice_headphones_wb = {
     "voice-headphones-wb",
-    "voice-headphones-main-mic-wb"
+    "device-headphones",
+    "voice-headphones-main-mic-wb", /* FIXME */
+    "FIXME",
 };
 
 const struct route_config voice_headset = {
     "voice-headphones",
-    "voice-headset-mic"
+    "device-headphones",
+    "voice-headset-mic",
+    "device-headset-in",
 };
 
 const struct route_config voice_headset_wb = {
     "voice-headphones-wb",
-    "voice-headset-mic-wb"
+    "device-headphones",
+    "voice-headset-mic-wb",
+    "device-headset-in",
 };
 
 const struct route_config voice_bt_sco = {
     "voice-bt-sco",
+    "device-sco",
     "voice-bt-sco-headset-mic",
+    "device-sco-headset-in",
 };
 
 const struct route_config voice_bt_sco_wb = {
     "voice-bt-sco-wb",
+    "device-sco",
     "voice-bt-sco-headset-mic-wb",
+    "device-sco-headset-in",
 };
 
 const struct route_config voice_bt_sco_headset_out = {
     "voice-bt-sco-headset-out",
+    "device-sco-headset-out",
     "voice-bt-sco-headset-mic",
+    "device-sco-headset-in",
 };
 
 const struct route_config voice_bt_sco_headset_out_wb = {
     "voice-bt-sco-headset-out-wb",
+    "device-sco-headset-out",
     "voice-bt-sco-headset-mic-wb",
+    "device-sco-headset-in",
 };
 
 const struct route_config media_speaker = {
     "media-speaker",
-    "media-main-mic"
+    "device-speaker",
+    "media-main-mic",
+    "device-two-mic",
 };
 
 const struct route_config media_earpiece = {
     "media-earpiece",
-    "media-main-mic"
+    "device-earpiece",
+    "media-main-mic",
+    "device-two-mic",
 };
 
 const struct route_config media_headphones = {
     "media-headphones",
-    "media-main-mic"
+    "device-headphones",
+    "media-main-mic",
+    "device-two-mic",
 };
 
 const struct route_config media_headset = {
     "media-headphones",
-    "media-headset-mic"
+    "device-headphones",
+    "media-headset-mic",
+    "device-headset-in",
 };
 
 const struct route_config media_bt_sco = {
     "media-bt-sco",
+    "device-sco",
     "media-bt-sco-headset-mic",
+    "device-sco-headset-in",
 };
 
 const struct route_config media_bt_sco_headset_out = {
     "media-bt-sco",
+    "device-sco-headset-out",
     "media-bt-sco-headset-mic",
+    "device-sco-headset-in",
 };
 
 const struct route_config camcorder_speaker = {
     "media-speaker",
-    "media-second-mic"
+    "device-speaker",
+    "media-main-mic",
+    "device-two-mic",
 };
 
 const struct route_config camcorder_headphones = {
     "media-headphones",
-    "media-second-mic"
+    "none",
+    "media-second-mic",
+    "none",
 };
 
 const struct route_config voice_rec_speaker = {
     "voice-rec-speaker",
-    "voice-rec-main-mic"
+    "device-speaker",
+    "voice-rec-main-mic",
+    "device-builtin-mic",
 };
 
 const struct route_config voice_rec_headphones = {
     "voice-rec-headphones",
-    "voice-rec-main-mic"
+    "device-headphones",
+    "voice-rec-main-mic",
+    "device-builtin-mic",
 };
 
 const struct route_config voice_rec_headset = {
     "voice-rec-headphones",
-    "voice-rec-headset-mic"
+    "device-headphones",
+    "voice-rec-headset-mic",
+    "device-headset-in",
 };
 
 const struct route_config communication_speaker = {
     "communication-speaker",
-    "communication-main-mic"
+    "device-speaker",
+    "communication-speaker-main-mic",
+    "device-two-mic",
 };
 
 const struct route_config communication_earpiece = {
     "communication-earpiece",
-    "communication-main-mic"
+    "device-earpiece",
+    "communication-earpiece-main-mic",
+    "device-two-mic",
 };
 
 const struct route_config communication_headphones = {
     "communication-headphones",
-    "communication-main-mic"
+    "device-headphones",
+    "communication-earpiece-main-mic",
+    "device-two-mic",
 };
 
 const struct route_config communication_headset = {
     "communication-headphones",
-    "communication-headset-mic"
+    "device-headphones",
+    "communication-headset-mic",
+    "device-headset-in",
 };
 
 const struct route_config speaker_and_headphones = {
     "speaker-and-headphones",
-    "main-mic"
+    "device-speaker",
+    "main-mic",
+    "device-two-mic",
 };
 
 const struct route_config bt_sco_carkit = {
     "bt-sco-carkit",
+    "device-sco-carkit",
     "bt-sco-headset-mic",
+    "none",
 };
 
 const struct route_config none = {
     "none",
-    "none"
+    "none",
+    "none",
+    "none",
 };
 
 const struct route_config * const route_configs[IN_SOURCE_TAB_SIZE]

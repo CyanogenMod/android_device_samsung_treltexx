@@ -221,6 +221,7 @@
     <!-- Disable Voice Sensing -->
     <ctl name="VI SENSING Switch" value="0" />
 
+    <!-- Set default AIF2 Mode -->
     <ctl name="AIF2 Mode" value="Master" />
 
     <!--
@@ -231,8 +232,12 @@
 
     <!-- ### Device ### -->
 
-    <path name="device-earpiece">
+    <path name="device-earpiece-enable">
         <ctl name="RCV Switch" value="1" />
+    </path>
+
+    <path name="device-earpiece-disable">
+        <ctl name="RCV Switch" value="0" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -310,8 +315,15 @@
 
     <!-- ### Device ### -->
 
-    <path name="device-speaker">
+    <path name="device-speaker-enable">
         <ctl name="SPK Switch" value="1" />
+    </path>
+
+    <path name="device-speaker-disable">
+        <ctl name="SPK Switch" value="0" />
+        <ctl name="VI SENSING Switch" value="0" />
+        <ctl name="DSP1L Input 1" value="None" />
+        <ctl name="DSP1L Input 2" value="None" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -400,8 +412,15 @@
 
     <!-- ### Device ### -->
 
-    <path name="device-headphones">
+    <path name="device-headphones-enable">
         <ctl name="HP Switch" value="1" />
+    </path>
+
+    <path name="device-headphones-disable">
+        <ctl name="HP Switch" value="0" />
+        <ctl name="DSP1 Aux 1" value="None" />
+        <ctl name="DSP1 Aux 2" value="None" />
+        <ctl name="HPOUT1 DRE Switch" value="0" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -477,9 +496,18 @@
     -->
 
     <!-- ### Device ### -->
-    <path name="device-sco">
+    <path name="device-sco-enable">
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
         <ctl name="ISRC2INT1 Input" value="None" />
+    </path>
+
+    <path name="device-sco-disable">
+        <ctl name="ASRC1L Input" value="None" />
+        <ctl name="ASRC1R Input" value="None" />
+        <ctl name="AIF3TX1 Input 1" value="None" />
+        <ctl name="AIF3TX2 Input 1" value="None" />
+        <ctl name="AIF3TX1 Input 2" value="None" />
+        <ctl name="AIF3TX2 Input 2" value="None" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -547,9 +575,18 @@
 
     <!-- ### Device ### -->
 
-    <path name="device-sco-headset-out">
+    <path name="device-sco-headset-out-enable">
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
         <ctl name="ISRC2INT1 Input" value="None" />
+    </path>
+
+    <path name="device-sco-headset-out-disable">
+        <ctl name="ASRC1L Input" value="None" />
+        <ctl name="ASRC1R Input" value="None" />
+        <ctl name="AIF3TX1 Input 1" value="None" />
+        <ctl name="AIF3TX2 Input 1" value="None" />
+        <ctl name="AIF3TX1 Input 2" value="None" />
+        <ctl name="AIF3TX2 Input 2" value="None" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -614,10 +651,18 @@
         <ctl name="ISRC2INT1 Input" value="None" />
     </path>
 
+    <path name="device-sco-carkit-disable">
+        <ctl name="ASRC1L Input" value="None" />
+        <ctl name="ASRC1R Input" value="None" />
+        <ctl name="AIF3TX1 Input 1" value="None" />
+        <ctl name="AIF3TX2 Input 1" value="None" />
+        <ctl name="AIF3TX1 Input 2" value="None" />
+        <ctl name="AIF3TX2 Input 2" value="None" />
+    </path>
+
     <!-- ### Scenario ### -->
 
     <path name="scenario-sco-carkit-default">
-        <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
         <ctl name="Sample Rate 3" value="16kHz" />
         <ctl name="ISRC1DEC1 Input" value="AIF1RX1" />
         <ctl name="ISRC1DEC2 Input" value="AIF1RX2" />
@@ -645,9 +690,13 @@
     -->
 
     <!-- ### Device ### -->
-    <path name="device-aux-digital">
+    <path name="device-aux-digital-enable">
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
         <ctl name="HDMI Switch" value="1" />
+    </path>
+
+    <path name="device-aux-digital-disable">
+        <ctl name="HDMI Switch" value="0" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -664,9 +713,13 @@
 
     <!-- ### Device ### -->
 
-    <path name="device-analogue-dock">
+    <path name="device-analogue-dock-enable">
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 1" />
         <ctl name="VPS Switch" value="1" />
+    </path>
+
+    <path name="device-analogue-dock-disable">
+        <ctl name="VPS Switch" value="0" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -688,8 +741,12 @@
 
     <!-- ### Device ### -->
 
-    <path name="device-builtin-mic">
+    <path name="device-builtin-mic-enable">
         <ctl name="Main Mic Switch" value="1" />
+    </path>
+
+    <path name="device-builtin-mic-disable">
+        <ctl name="Main Mic Switch" value="0" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -861,8 +918,12 @@
 
     <!-- ### Device ### -->
 
-    <path name="device-back-mic">
+    <path name="device-back-mic-enable">
         <ctl name="Sub Mic Switch" value="1" />
+    </path>
+
+    <path name="device-back-mic-disable">
+        <ctl name="Sub Mic Switch" value="0" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -924,9 +985,14 @@
 
     <!-- ### Device ### -->
 
-    <path name="device-two-mic">
-        <path name="device-builtin-mic" />
-        <path name="device-back-mic" />
+    <path name="device-two-mic-enable">
+        <path name="device-builtin-mic-enable" />
+        <path name="device-back-mic-enable" />
+    </path>
+
+    <path name="device-two-mic-disable">
+        <path name="device-builtin-mic-disable" />
+        <path name="device-back-mic-disable" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -965,8 +1031,12 @@
     -->
 
     <!-- ### Device ### -->
-    <path name="device-third-mic">
+    <path name="device-third-mic-enable">
         <ctl name="Third Mic Switch" value="1" />
+    </path>
+
+    <path name="device-third-mic-disable">
+        <ctl name="Third Mic Switch" value="0" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -996,8 +1066,12 @@
     -->
 
     <!-- ### Device ### -->
-    <path name="device-headset-in">
+    <path name="device-headset-in-enable">
         <ctl name="Headset Mic Switch" value="1" />
+    </path>
+
+    <path name="device-headset-in-disable">
+        <ctl name="Headset Mic Switch" value="0" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -1066,11 +1140,16 @@
     -->
 
     <!-- ### Device ### -->
-    <path name="device-sco-headset-in">
+    <path name="device-sco-headset-in-enable">
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 2" />
         <ctl name="AIF2TX1 Input 1" value="None" />
         <ctl name="AIF2TX2 Input 1" value="None" />
         <ctl name="DSP3 Virtual Input" value="None" />
+    </path>
+
+    <path name="device-sco-headset-in-disable">
+        <ctl name="ASRC1L Input" value="AIF3RX1" />
+        <ctl name="ASRC1R Input" value="AIF3RX2" />
     </path>
 
     <!-- ### Scenario ### -->
@@ -1206,7 +1285,6 @@
 
         <path name="scenario-earpiece-incall-nb" />
         <path name="volume-earpiece-incall" />
-        <path name="device-earpiece" />
     </path>
 
     <path name="voice-earpiece-wb">
@@ -1214,7 +1292,6 @@
 
         <path name="scenario-earpiece-incall-wb" />
         <path name="volume-earpiece-incall" />
-        <path name="device-earpiece" />
     </path>
 
     <path name="voice-speaker">
@@ -1222,7 +1299,6 @@
 
         <path name="scenario-speaker-incall-nb" />
         <path name="volume-speaker-incall" />
-        <path name="device-speaker" />
     </path>
 
     <path name="voice-speaker-wb">
@@ -1230,7 +1306,6 @@
 
         <path name="scenario-speaker-incall-wb" />
         <path name="volume-speaker-incall" />
-        <path name="device-speaker" />
     </path>
 
     <path name="voice-headphones">
@@ -1238,7 +1313,6 @@
 
         <path name="scenario-headphones-incall-nb" />
         <path name="volume-headphones-incall" />
-        <path name="device-headphones" />
     </path>
 
     <path name="voice-headphones-wb">
@@ -1246,7 +1320,6 @@
 
         <path name="scenario-headphones-incall-wb" />
         <path name="volume-headphones-incall" />
-        <path name="device-headphones" />
     </path>
 
     <path name="voice-bt-sco">
@@ -1254,7 +1327,6 @@
 
         <path name="scenario-sco-incall-nb" />
         <path name="volume-sco-incall" />
-        <path name="device-sco" />
     </path>
 
     <path name="voice-bt-sco-wb">
@@ -1262,7 +1334,6 @@
 
         <path name="scenario-sco-incall-wb" />
         <path name="volume-sco-incall" />
-        <path name="device-sco" />
     </path>
 
     <path name="voice-bt-sco-headset-out">
@@ -1270,7 +1341,6 @@
 
         <path name="scenario-sco-headset-out-incall-nb" />
         <path name="volume-sco-headset-out-default" />
-        <path name="device-sco-headset-out" />
     </path>
 
     <path name="voice-bt-sco-headset-out-wb">
@@ -1278,7 +1348,6 @@
 
         <path name="scenario-sco-headset-out-incall-wb" />
         <path name="volume-sco-headset-out-default" />
-        <path name="device-sco-headset-out" />
     </path>
 
     <path name="media-earpiece">
@@ -1286,7 +1355,6 @@
 
         <path name="scenario-earpiece-default" />
         <path name="volume-earpiece-default" />
-        <path name="device-earpiece" />
     </path>
 
     <path name="media-speaker">
@@ -1294,7 +1362,6 @@
 
         <path name="scenario-speaker-default" />
         <path name="volume-speaker-default" />
-        <path name="device-speaker" />
     </path>
 
     <path name="media-headphones">
@@ -1302,7 +1369,6 @@
 
         <path name="scenario-headphones-default" />
         <path name="volume-headphones-default" />
-        <path name="device-headphones" />
     </path>
 
     <path name="media-bt-sco">
@@ -1310,7 +1376,6 @@
 
         <path name="scenario-sco-default" />
         <path name="volume-sco-default" />
-        <path name="device-sco" />
     </path>
 
     <path name="media-bt-sco-headset-out">
@@ -1318,7 +1383,6 @@
 
         <path name="scenario-sco-headset-out-default" />
         <path name="volume-sco-headset-out-default" />
-        <path name="device-sco-headset-out" />
     </path>
 
     <path name="voice-rec-speaker">
@@ -1326,7 +1390,6 @@
 
         <path name="scenario-speaker-default" />
         <path name="volume-speaker-default" />
-        <path name="device-speaker" />
     </path>
 
     <path name="voice-rec-headphones">
@@ -1334,7 +1397,6 @@
 
         <path name="scenario-headphones-default" />
         <path name="volume-headphones-default" />
-        <path name="device-headphones" />
     </path>
 
     <path name="communication-speaker">
@@ -1342,7 +1404,6 @@
 
         <path name="scenario-speaker-default" />
         <path name="volume-speaker-default" />
-        <path name="device-speaker" />
     </path>
 
     <path name="communication-earpiece">
@@ -1350,7 +1411,6 @@
 
         <path name="scenario-earpiece-default" />
         <path name="volume-earpiece-default" />
-        <path name="device-earpiece" />
     </path>
 
     <path name="communication-headphones">
@@ -1358,7 +1418,6 @@
 
         <path name="scenario-headphones-default" />
         <path name="volume-headphones-default" />
-        <path name="device-headphones" />
     </path>
 
     <path name="speaker-and-headphones">
@@ -1368,8 +1427,6 @@
         <path name="scenario-headphones-default" />
         <path name="volume-speaker-default" />
         <path name="volume-headphones-default" />
-        <path name="device-speaker" />
-        <path name="device-headphones" />
     </path>
 
     <path name="bt-sco-carkit">
@@ -1377,7 +1434,6 @@
 
         <path name="scenario-sco-carkit-default" />
         <path name="volume-sco-carkit-default" />
-        <path name="device-sco-carkit" />
     </path>
 
     <!-- ### Capture ### -->
@@ -1419,7 +1475,6 @@
 
         <path name="scenario-builtin-mic-default" />
         <path name="volume-builtin-mic-default" />
-        <path name="device-builtin-mic" />
     </path>
 
     <path name="voice-headset-mic">
@@ -1427,7 +1482,6 @@
 
         <path name="scenario-headset-in-incall-nb" />
         <path name="volume-headset-in-incall" />
-        <path name="device-headset-in" />
     </path>
 
     <path name="voice-headset-mic-wb">
@@ -1435,7 +1489,6 @@
 
         <path name="scenario-headset-in-incall-wb" />
         <path name="volume-headset-in-incall" />
-        <path name="device-headset-in" />
     </path>
 
     <path name="voice-rec-headset-mic">
@@ -1443,21 +1496,18 @@
 
         <path name="scenario-headset-in-default" />
         <path name="volume-headset-in-default" />
-        <path name="device-headset-in" />
     </path>
 
     <path name="voice-bt-sco-headset-mic">
         <path name="channel-none" />
 
         <path name="scenario-sco-headset-in-incall-nb" />
-        <path name="device-sco-headset-in" />
     </path>
 
     <path name="voice-bt-sco-headset-mic-wb">
         <path name="channel-none" />
 
         <path name="scenario-sco-headset-in-incall-wb" />
-        <path name="device-sco-headset-in" />
     </path>
 
     <path name="media-main-mic">
@@ -1465,7 +1515,6 @@
 
         <path name="scenario-builtin-mic-default" />
         <path name="volume-builtin-mic-default" />
-        <path name="device-builtin-mic" />
     </path>
 
     <path name="media-second-mic">
@@ -1473,7 +1522,6 @@
 
         <path name="scenario-back-mic-default" />
         <path name="volume-back-mic-default" />
-        <path name="device-back-mic" />
     </path>
 
     <path name="media-headset-mic">
@@ -1481,7 +1529,6 @@
 
         <path name="scenario-headset-in-default" />
         <path name="volume-headset-in-default" />
-        <path name="device-headset-in" />
     </path>
 
     <path name="media-bt-sco-headset-mic">
@@ -1496,7 +1543,6 @@
 
         <path name="scenario-builtin-mic-default" />
         <path name="volume-builtin-mic-default" />
-        <path name="device-builtin-mic" />
     </path>
 
     <path name="communication-headset-mic">
@@ -1504,7 +1550,6 @@
 
         <path name="scenario-headset-in-default" />
         <path name="volume-headset-in-default" />
-        <path name="device-headset-in" />
     </path>
 
     <path name="none">
