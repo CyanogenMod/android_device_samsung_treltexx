@@ -59,13 +59,13 @@ public class SlteRIL extends RIL {
 
     public SlteRIL(Context context, int preferredNetworkType, int cdmaSubscription) {
         super(context, preferredNetworkType, cdmaSubscription, null);
-        mQANElements = 6;
+        mQANElements = 5;
     }
 
     public SlteRIL(Context context, int preferredNetworkType,
                    int cdmaSubscription, Integer instanceId) {
         super(context, preferredNetworkType, cdmaSubscription, instanceId);
-        mQANElements = 6;
+        mQANElements = 5;
     }
 
     public void
@@ -374,7 +374,7 @@ public class SlteRIL extends RIL {
     @Override
     protected Object
     responseOperatorInfos(Parcel p) {
-        String strings[] = (String [])responseStrings(p);
+        String strings[] = (String[])responseStrings(p);
         ArrayList<OperatorInfo> ret;
 
         if (strings.length % mQANElements != 0) {
@@ -387,14 +387,22 @@ public class SlteRIL extends RIL {
         if (strings.length != 0) {
             init = new Operators();
         }
+
         for (int i = 0 ; i < strings.length ; i += mQANElements) {
-            String temp = init.unOptimizedOperatorReplace(strings[i+0]);
-            ret.add (
-                     new OperatorInfo(
-                                      temp, //operatorAlphaLong
-                                      temp,//operatorAlphaShort
-                                      strings[i+2],//operatorNumeric
-                                      strings[i+3]));//state
+            String strOperatorLong = init.unOptimizedOperatorReplace(strings[i+0]);
+            String strOperatorNumeric = strings[i+2];
+            String strState = strings[i+3].toLowerCase();
+
+            Rlog.v(RILJ_LOG_TAG,
+                   "XMM7260: Add OperatorInfo: " + strOperatorLong +
+                   ", " + strOperatorLong +
+                   ", " + strOperatorNumeric +
+                   ", " + strState);
+
+            ret.add(new OperatorInfo(strOperatorLong, // operatorAlphaLong
+                                     strOperatorLong, // operatorAlphaShort
+                                     strOperatorNumeric,    // operatorNumeric
+                                     strState));  // stateString
         }
 
         return ret;
