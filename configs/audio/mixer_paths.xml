@@ -1516,7 +1516,8 @@
         <path name="channel-left" />
 
         <path name="scenario-builtin-mic-default" />
-        <path name="volume-builtin-mic-default" />
+        <path name="scenario-back-mic-default" />
+        <path name="volume-two-mic-default" />
     </path>
 
     <path name="voice-headset-mic">
