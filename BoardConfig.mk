@@ -8,7 +8,7 @@ TARGET_NO_RADIOIMAGE := true
 
 # Platform
 TARGET_BOARD_PLATFORM := exynos5
-TARGET_SLSI_VARIANT := insignal
+TARGET_SLSI_VARIANT := cm
 TARGET_SOC := exynos5433
 
 # Bionic Tuning
