@@ -343,7 +343,9 @@ PRODUCT_PACKAGES += \
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.debug_level=0x4948 \
-    ro.secure=0
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    persist.service.adb.enable=1
 
 ###########################################################
 ### DALVIK/ART
