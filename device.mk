@@ -343,7 +343,8 @@ PRODUCT_PACKAGES += \
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.debug_level=0x4948 \
-    ro.secure=0
+    ro.secure=0 \
+    ro.adb.secure=0
 
 ###########################################################
 ### DALVIK/ART
