@@ -17,7 +17,7 @@
     },
     {
         "repository": "android_hardware_samsung_slsi-cm_exynos5433",
-        "target_path": "hardware/samsung_slsi-cm/exynos5410"
+        "target_path": "hardware/samsung_slsi-cm/exynos5433"
     },
     {
         "repository": "android_hardware_samsung_slsi-cm_openmax",
