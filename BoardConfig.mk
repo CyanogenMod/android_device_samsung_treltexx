@@ -170,16 +170,6 @@ BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.universal5433
 TARGET_OTA_ASSERT_DEVICE := trelte,treltexx,tre3g,tre3gxx
 
-# SeLinux
+# SELinux
 BOARD_SEPOLICY_DIRS := \
 	device/samsung/treltexx/sepolicy
-
-BOARD_SEPOLICY_UNION := \
-	app.te \
-	cpboot-daemon.te \
-	domain.te \
-	exyrngd.te \
-	file_contexts \
-	file.te \
-	macloader.te \
-	ueventd.te
