@@ -57,8 +57,8 @@ public class SlteRIL extends RIL {
 
     private Message mPendingGetSimStatus;
 
-    public SlteRIL(Context context, int preferredNetworkType, int cdmaSubscription) {
-        super(context, preferredNetworkType, cdmaSubscription, null);
+    public SlteRIL(Context context, int networkModes, int cdmaSubscription) {
+        this(context, networkModes, cdmaSubscription, null);
         mQANElements = 6;
     }
 
