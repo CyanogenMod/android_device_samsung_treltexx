@@ -374,6 +374,5 @@ $(call inherit-product-if-exists, vendor/samsung/treltexx/treltexx-vendor.mk)
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5433/exynos5433.mk)
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_treltexx
 PRODUCT_DEVICE := treltexx
