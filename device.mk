@@ -231,11 +231,6 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #    libOMX.Exynos.AVC.Encoder
 
-
-# Some Exynos HW codecs require AwesomePlayer
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.media.use-awesome=true
-
 ###########################################################
 ### POWER
 ###########################################################
