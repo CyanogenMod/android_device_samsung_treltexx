@@ -72,6 +72,9 @@ OVERRIDE_RS_DRIVER := libRSDriverArm.so
 # frameworks/native/services/surfaceflinger
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
+# Exynos display
+BOARD_USES_VIRTUAL_DISPLAY := true
+
 # HWCServices
 BOARD_USES_HWC_SERVICES := true
 
