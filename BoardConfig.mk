@@ -111,8 +111,8 @@ BOARD_USE_S3D_SUPPORT := true
 BOARD_USE_VP8ENC_SUPPORT := true
 
 # HEVC support in libvideocodec
-BOARD_USE_HEVC_HWIP := true
-BOARD_USE_HEVCDEC_SUPPORT := true
+#BOARD_USE_HEVC_HWIP := true
+#BOARD_USE_HEVCDEC_SUPPORT := true
 
 # MP3/WMA support
 BOARD_USE_ALP_AUDIO := true
