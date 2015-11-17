@@ -112,7 +112,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.hsxpa=1 \
     ro.ril.gprsclass=10 \
     ro.telephony.ril_class=SlteRIL \
-    ro.use_data_netmgrd=false \
+    ro.use_data_netmgrd=true \
     persist.data.netmgrd.qos.enable=false \
     ro.data.large_tcp_window_size=true \
     telephony.lteOnCdmaDevice=0 \
@@ -336,7 +336,8 @@ PRODUCT_PACKAGES += \
 ###########################################################
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.debug_level=0x4948
+    ro.debug_level=0x4948 \
+    ro.secure=0
 
 ###########################################################
 ### DALVIK/ART
