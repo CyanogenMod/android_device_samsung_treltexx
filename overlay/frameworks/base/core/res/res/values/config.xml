@@ -234,4 +234,7 @@
 
     <!-- Screen brightness when dozing. -->
     <integer name="config_screenBrightnessDoze">19</integer>
+
+    <!-- Enable doze powersaving -->
+    <bool name="config_enableAutoPowerModes">true</bool>
 </resources>
