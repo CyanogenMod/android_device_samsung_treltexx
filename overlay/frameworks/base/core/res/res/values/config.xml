@@ -237,4 +237,7 @@
 
     <!-- Enable doze powersaving -->
     <bool name="config_enableAutoPowerModes">true</bool>
+
+    <!-- Allow screen mirroring/miracast -->
+    <bool name="config_enableWifiDisplay">true</bool>
 </resources>
