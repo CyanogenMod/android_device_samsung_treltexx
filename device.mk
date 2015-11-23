@@ -120,7 +120,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.data.large_tcp_window_size=true \
     telephony.lteOnCdmaDevice=0 \
     persist.radio.add_power_save=1 \
-    persist.radio.apm_sim_not_pwdn=1
+    persist.radio.apm_sim_not_pwdn=1 \
+    ro.ril.qanelements=5
 
 ###########################################################
 ### WIFI
