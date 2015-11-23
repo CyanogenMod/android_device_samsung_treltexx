@@ -238,4 +238,7 @@
     <!-- Device will display option to wake only if proximity sensor is uncovered -->
     <bool name="config_proximityCheckOnWake">true</bool>
     <integer name="config_proximityCheckTimeout">400</integer>
+
+    <!-- Allow screen mirroring/miracast -->
+    <bool name="config_enableWifiDisplay">true</bool>
 </resources>
