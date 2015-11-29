@@ -48,14 +48,6 @@
 #define BOOST_CPU0_PATH "/sys/devices/system/cpu/cpu0/cpufreq/interactive/boost"
 #define BOOST_CPU4_PATH "/sys/devices/system/cpu/cpu4/cpufreq/interactive/boost"
 
-#define CPU0_MAX_FREQ_PATH "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq"
-#define CPU4_MAX_FREQ_PATH "/sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq"
-
-#define LOW_POWER_MAX_FREQ_BIG "700000"
-#define NORMAL_MAX_FREQ_BIG "1900000"
-#define LOW_POWER_MAX_FREQ_LITTLE "400000"
-#define NORMAL_MAX_FREQ_LITTLE "1300000"
-
 #define TOUCHSCREEN_PATH "/sys/class/input/input2/enabled"
 #define TOUCHKEY_PATH "/sys/class/input/input1/enabled"
 
@@ -229,19 +221,6 @@ static void exynos5433_power_set_interactive(struct power_module *module, int on
 
     ALOGV("power_set_interactive: %d\n", on);
 
-    /*
-     * Lower maximum frequency when screen is off.  CPU 0 and 1 share a
-     * cpufreq policy.
-     */
-    sysfs_write(CPU0_MAX_FREQ_PATH,
-                (!on || low_power_mode) ? LOW_POWER_MAX_FREQ_LITTLE : NORMAL_MAX_FREQ_LITTLE);
-
-    rc = stat(CPU0_MAX_FREQ_PATH, &sb);
-    if (rc == 0) {
-        sysfs_write(CPU4_MAX_FREQ_PATH,
-                    (!on || low_power_mode) ? LOW_POWER_MAX_FREQ_BIG : NORMAL_MAX_FREQ_BIG);
-    }
-
     sysfs_write(exynos5433_pwr->touchscreen_power_path, on ? "1" : "0");
     if (!on) {
         if (sysfs_read(TOUCHKEY_PATH, touchkey_node, sizeof(touchkey_node)) == 0) {
@@ -365,7 +344,7 @@ static void exynos5433_power_hint(struct power_module *module,
                         int rc;
 
                         sysfs_write(BOOST_CPU0_PATH, "0");
-                        rc = stat(CPU4_MAX_FREQ_PATH, &sb);
+                        rc = stat(BOOST_CPU4_PATH, &sb);
                         if (rc == 0) {
                             sysfs_write(BOOST_CPU4_PATH, "0");
                         }
@@ -383,19 +362,6 @@ static void exynos5433_power_hint(struct power_module *module,
 
             pthread_mutex_lock(&exynos5433_pwr->lock);
 
-            if (data) {
-                sysfs_write(CPU0_MAX_FREQ_PATH, LOW_POWER_MAX_FREQ_LITTLE);
-                rc = stat(CPU4_MAX_FREQ_PATH, &sb);
-                if (rc == 0) {
-                    sysfs_write(CPU4_MAX_FREQ_PATH, LOW_POWER_MAX_FREQ_BIG);
-                }
-            } else {
-                sysfs_write(CPU0_MAX_FREQ_PATH, NORMAL_MAX_FREQ_LITTLE);
-                rc = stat(CPU4_MAX_FREQ_PATH, &sb);
-                if (rc == 0) {
-                    sysfs_write(CPU4_MAX_FREQ_PATH, NORMAL_MAX_FREQ_BIG);
-                }
-            }
             low_power_mode = data;
 
             pthread_mutex_unlock(&exynos5433_pwr->lock);
