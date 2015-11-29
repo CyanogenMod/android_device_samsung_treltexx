@@ -229,19 +229,6 @@ static void exynos5433_power_set_interactive(struct power_module *module, int on
 
     ALOGV("power_set_interactive: %d\n", on);
 
-    /*
-     * Lower maximum frequency when screen is off.  CPU 0 and 1 share a
-     * cpufreq policy.
-     */
-    sysfs_write(CPU0_MAX_FREQ_PATH,
-                (!on || low_power_mode) ? LOW_POWER_MAX_FREQ_LITTLE : NORMAL_MAX_FREQ_LITTLE);
-
-    rc = stat(CPU0_MAX_FREQ_PATH, &sb);
-    if (rc == 0) {
-        sysfs_write(CPU4_MAX_FREQ_PATH,
-                    (!on || low_power_mode) ? LOW_POWER_MAX_FREQ_BIG : NORMAL_MAX_FREQ_BIG);
-    }
-
     sysfs_write(exynos5433_pwr->touchscreen_power_path, on ? "1" : "0");
     if (!on) {
         if (sysfs_read(TOUCHKEY_PATH, touchkey_node, sizeof(touchkey_node)) == 0) {
@@ -365,7 +352,7 @@ static void exynos5433_power_hint(struct power_module *module,
                         int rc;
 
                         sysfs_write(BOOST_CPU0_PATH, "0");
-                        rc = stat(CPU4_MAX_FREQ_PATH, &sb);
+                        rc = stat(BOOST_CPU4_PATH, &sb);
                         if (rc == 0) {
                             sysfs_write(BOOST_CPU4_PATH, "0");
                         }
