@@ -18,9 +18,13 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
     Fence.cpp \
-    GraphicBufferMapper.cpp
+    GraphicBufferMapper.cpp \
+    rsCpuCore.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder libui
+LOCAL_C_INCLUDES += \
+    frameworks/rs
+
+LOCAL_SHARED_LIBRARIES := libbinder libui libRSCpuRef
 
 LOCAL_MODULE := libsamsung_symbols
 LOCAL_MODULE_TAGS := optional
