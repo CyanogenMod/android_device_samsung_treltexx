@@ -336,7 +336,8 @@ PRODUCT_PACKAGES += \
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.debug_level=0x4948 \
-    ro.secure=0
+    ro.secure=0 \
+    ro.revision=21
 
 ###########################################################
 ### DALVIK/ART
