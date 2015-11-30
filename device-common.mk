@@ -94,6 +94,9 @@ PRODUCT_PACKAGES += \
 ###########################################################
 
 PRODUCT_PACKAGES += \
+    hwrevision
+
+PRODUCT_PACKAGES += \
     libsecril-client \
     libsecril-client-sap
 
