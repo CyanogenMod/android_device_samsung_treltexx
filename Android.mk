@@ -16,13 +16,13 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter treltexx, $(TARGET_DEVICE)),)
+ifneq ($(filter treltexx trhpltexx, $(TARGET_DEVICE)),)
 
-$(shell mkdir -p out/target/product/treltexx/obj/KERNEL_OBJ/drivers/net/wireless/bcmdhd4358)
-$(shell mkdir -p out/target/product/treltexx/obj/KERNEL_OBJ/drivers/sensorhub/brcm/factory)
-$(shell mkdir -p out/target/product/treltexx/obj/KERNEL_OBJ/drivers/media/platform/exynos/fimc-is/sensor)
-$(shell mkdir -p out/target/product/treltexx/obj/KERNEL_OBJ/security/tima_uevent)
+$(shell mkdir -p out/target/product/$(TARGET_DEVICE)/obj/KERNEL_OBJ/drivers/net/wireless/bcmdhd4358)
+$(shell mkdir -p out/target/product/$(TARGET_DEVICE)/obj/KERNEL_OBJ/drivers/sensorhub/brcm/factory)
+$(shell mkdir -p out/target/product/$(TARGET_DEVICE)/obj/KERNEL_OBJ/drivers/media/platform/exynos/fimc-is/sensor)
+$(shell mkdir -p out/target/product/$(TARGET_DEVICE)/obj/KERNEL_OBJ/security/tima_uevent)
 
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
+include $(call first-makefiles-under,$(LOCAL_PATH))
 
 endif
