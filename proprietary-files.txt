@@ -21,6 +21,9 @@ etc/sec_s3fwrn5_rfreg.bin
 lib/hw/nfc_nci.universal5433.so
 vendor/firmware/sec_s3fwrn5_firmware.bin
 
+### IR Blaster
+lib/hw/consumerir.exynos5.so
+
 ### Media
 # hevc for v4l2
 vendor/firmware/hevc_fw.bin
