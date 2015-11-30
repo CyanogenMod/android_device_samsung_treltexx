@@ -1,4 +1,9 @@
-on fs
+service hwrev-parser /sbin/hwrevision
+    class core
+    user root
+    group root
+    oneshot
+
 service cpboot-daemon /sbin/cbd -d -tstem7400 -bh -mh -p 13
     class main
     user root
