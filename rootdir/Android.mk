@@ -1,18 +1,22 @@
 LOCAL_PATH := $(call my-dir)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE		:= fstab.universal5433
-LOCAL_MODULE_TAGS	:= optional eng
-LOCAL_MODULE_CLASS	:= BOOT
-LOCAL_SRC_FILES		:= etc/fstab.universal5433
-LOCAL_MODULE_PATH	:= $(TARGET_ROOT_OUT)
-include $(BUILD_PREBUILT)
+ifneq ($(filter treltexx, $(TARGET_DEVICE)),)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE		:= init.modem.rc
 LOCAL_MODULE_TAGS	:= optional eng
 LOCAL_MODULE_CLASS	:= BOOT
 LOCAL_SRC_FILES		:= etc/init.modem.rc
+LOCAL_MODULE_PATH	:= $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+endif
+
+include $(CLEAR_VARS)
+LOCAL_MODULE		:= fstab.universal5433
+LOCAL_MODULE_TAGS	:= optional eng
+LOCAL_MODULE_CLASS	:= BOOT
+LOCAL_SRC_FILES		:= etc/fstab.universal5433
 LOCAL_MODULE_PATH	:= $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
