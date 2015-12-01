@@ -74,7 +74,7 @@
 
 struct pcm_config pcm_config = {
     .channels = 2,
-    .rate = 48000,
+    .rate = 44100,
     .period_size = 256,
     .period_count = 2,
     .format = PCM_FORMAT_S16_LE,
@@ -82,7 +82,7 @@ struct pcm_config pcm_config = {
 
 struct pcm_config pcm_config_deep = {
     .channels = 2,
-    .rate = 48000,
+    .rate = 44100,
     .period_size = 1024,
     .period_count = 2,
     .format = PCM_FORMAT_S16_LE,
@@ -90,7 +90,7 @@ struct pcm_config pcm_config_deep = {
 
 struct pcm_config pcm_config_in = {
     .channels = 2,
-    .rate = 48000,
+    .rate = 44100,
     .period_size = 1024,
     .period_count = 2,
     .format = PCM_FORMAT_S16_LE,
@@ -98,7 +98,7 @@ struct pcm_config pcm_config_in = {
 
 struct pcm_config pcm_config_in_low_latency = {
     .channels = 2,
-    .rate = 48000,
+    .rate = 44100,
     .period_size = 256,
     .period_count = 2,
     .format = PCM_FORMAT_S16_LE,
