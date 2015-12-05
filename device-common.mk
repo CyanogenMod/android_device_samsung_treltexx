@@ -64,7 +64,8 @@ PRODUCT_PACKAGES += \
     gralloc.exynos5
 
 PRODUCT_PACKAGES += \
-    libion
+    libion \
+    libfimg
 
 PRODUCT_PACKAGES += \
     libstlport
