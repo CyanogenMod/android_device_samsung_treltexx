@@ -1,8 +1,3 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-# The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_eu_supl.mk)
-
 DEVICE_PACKAGE_OVERLAYS += device/samsung/treltexx/overlay
 
 LOCAL_PATH := device/samsung/treltexx
@@ -119,11 +114,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0
-
 PRODUCT_PACKAGES += \
-    libnetcmdiface \
     macloader \
     hostapd \
     libwpa_client \
@@ -291,15 +282,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
 ###########################################################
-### FILESYSTEM MANAGEMENT
-###########################################################
-
-PRODUCT_PACKAGES += \
-    make_ext4fs \
-    e2fsck \
-    setup_fs
-
-###########################################################
 ### MOBICORE
 ###########################################################
 
@@ -361,8 +343,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_small_cache_height=2048 \
     ro.hwui.text_large_cache_width=4096 \
     ro.hwui.text_large_cache_height=4096
-
-$(call inherit-product-if-exists, build/target/product/full.mk)
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/samsung/treltexx/treltexx-vendor.mk)
