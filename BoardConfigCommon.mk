@@ -76,6 +76,7 @@ BOARD_USES_VIRTUAL_DISPLAY := true
 BOARD_USES_HWC_SERVICES := true
 
 # HDMI
+BOARD_USES_NEW_HDMI := true
 BOARD_USES_GSC_VIDEO := true
 
 # FIMG2D
@@ -109,9 +110,6 @@ BOARD_USE_VP8ENC_SUPPORT := true
 # HEVC support in libvideocodec
 #BOARD_USE_HEVC_HWIP := true
 #BOARD_USE_HEVCDEC_SUPPORT := true
-
-# Disable HDMI for now
-BOARD_HDMI_INCAPABLE := true
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
