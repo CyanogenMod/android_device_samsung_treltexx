@@ -74,7 +74,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libion \
-    libcec
+    libfimg
 
 PRODUCT_PACKAGES += \
     libstlport
