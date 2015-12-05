@@ -180,17 +180,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:system/etc/media_profiles.xml
 
-# Audio codecs
-PRODUCT_PACKAGES += \
-    libOMX.Exynos.AAC.Decoder \
-    libOMX.Exynos.FLAC.Decoder \
-    libOMX.Exynos.MP3.Decoder \
-    libOMX.Exynos.WMA.Encoder
-
-# Seiren hardware audio decoder
-PRODUCT_PACKAGES += \
-    libseirenhw
-
 # Stagefright and device specific modules
 PRODUCT_PACKAGES += \
     libstagefrighthw \
