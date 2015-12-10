@@ -28,7 +28,7 @@ $(call inherit-product, device/samsung/treltexx/device-common.mk)
 PRODUCT_NAME := full_trhpltexx
 PRODUCT_DEVICE := trhpltexx
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-N910C
+PRODUCT_MODEL := SM-N910U
 PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
