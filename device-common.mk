@@ -73,8 +73,7 @@ PRODUCT_PACKAGES += \
     memtrack.exynos5
 
 PRODUCT_PACKAGES += \
-    libion \
-    libcec
+    libion
 
 PRODUCT_PACKAGES += \
     libstlport
@@ -137,8 +136,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
-    libnfc_nci_jni \
-    libnfc-nci \
     NfcNci \
     Tag
 
@@ -269,9 +266,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ###########################################################
 
 PRODUCT_PACKAGES += \
-    libMcClient \
-    libMcRegistry \
-    libgdmcprov \
     mcDriverDaemon
 
 ###########################################################
@@ -327,8 +321,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_large_cache_width=4096 \
     ro.hwui.text_large_cache_height=4096
 
-# call the proprietary setup
-$(call inherit-product-if-exists, vendor/samsung/treltexx/treltexx-vendor.mk)
-
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5433/exynos5433.mk)
+
+# call the proprietary setup
+$(call inherit-product-if-exists, vendor/samsung/treltexx/treltexx-vendor.mk)
