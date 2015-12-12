@@ -1,4 +1,2 @@
-add_lunch_combo aosp_trhpltexx-eng
-add_lunch_combo aosp_trhpltexx-userdebug
 add_lunch_combo cm_trhpltexx-eng
 add_lunch_combo cm_trhpltexx-userdebug
