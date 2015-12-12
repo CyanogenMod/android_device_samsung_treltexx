@@ -101,7 +101,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=0 \
     persist.radio.add_power_save=1 \
     persist.radio.apm_sim_not_pwdn=1 \
-    ro.ril.qanelements=5
+    ro.ril.telephony.mqanelements=5
 
 ###########################################################
 ### WIFI
