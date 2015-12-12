@@ -36,6 +36,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # PowerHAL
 TARGET_POWERHAL_VARIANT := universal5433
 
+# Sensors
+TARGET_NO_SENSOR_PERMISSION_CHECK := true
+
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/trelte
 
