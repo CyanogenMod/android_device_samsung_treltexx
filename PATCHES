@@ -1,5 +1,3 @@
 Patches that are needed but have not been merged into CM yet:
 
-1) http://review.cyanogenmod.org/#/c/116624/ (fw/av include paths)
-2) http://review.cyanogenmod.org/#/c/116626/ (fw/av include paths)
-3) http://review.cyanogenmod.org/#/c/122062/ (sensors HAL)
+1) http://review.cyanogenmod.org/#/c/122062/ (sensors HAL)
