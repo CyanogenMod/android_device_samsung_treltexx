@@ -251,4 +251,7 @@
 
     <!-- Boolean to enable Stylus gestures -->
     <bool name="config_stylusGestures">true</bool>
+
+    <!-- Our modem doesn't support this query yet -->
+    <string name="config_radio_access_family">GSM|WCDMA|LTE</string>
 </resources>
