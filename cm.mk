@@ -1,4 +1,5 @@
 # Inherit device configuration
+$(call inherit-product, device/samsung/treltexx/device.mk)
 $(call inherit-product, device/samsung/treltexx/device-common.mk)
 
 # Inherit from the common Open Source product configuration
