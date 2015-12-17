@@ -8,7 +8,7 @@ TARGET_KERNEL_CONFIG := cm_exynos5433-trhplte_defconfig
 BOARD_MODEM_TYPE := xmm7260
 
 # Recovery
-TARGET_OTA_ASSERT_DEVICE := trhplte,trhpltexx
+TARGET_OTA_ASSERT_DEVICE := trhplte,trhpltexx,treltexx
 
 # Inherit common board flags
 include device/samsung/treltexx/BoardConfigCommon.mk
