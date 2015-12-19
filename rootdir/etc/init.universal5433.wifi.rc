@@ -44,6 +44,7 @@ on boot
 # Run deferred initcalls of builtin kernel modules (bcmdhd)
 service wifiloader /system/bin/wifiloader
     class main
+    seclabel u:r:wifiloader:s0
     oneshot
 
 service p2p_supplicant /system/bin/wpa_supplicant \
