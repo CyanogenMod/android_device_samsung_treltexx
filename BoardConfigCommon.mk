@@ -58,7 +58,9 @@ BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
 
 # Graphics
 USE_OPENGL_RENDERER := true
-OVERRIDE_RS_DRIVER := libRSDriverArm.so
+
+# Renderscript
+BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53
 
 # frameworks/native/services/surfaceflinger
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
