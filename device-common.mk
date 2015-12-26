@@ -83,7 +83,7 @@ PRODUCT_PACKAGES += \
 ###########################################################
 
 PRODUCT_PACKAGES += \
-    hwrevision
+    init.modem.sh
 
 PRODUCT_PACKAGES += \
     libsecril-client \

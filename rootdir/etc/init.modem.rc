@@ -1,5 +1,5 @@
-service hwrev-parser /sbin/hwrevision
-    class core
+service hwrev-parser /system/bin/init.modem.sh
+    class main
     user root
     group root
     oneshot
@@ -9,6 +9,10 @@ service cpboot-daemon /sbin/cbd -d -tstem7400 -bh -mh -p 13
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell
     seclabel u:r:cpboot-daemon:s0
+    disabled
+
+on property:ro.revision.set=1
+    start cpboot-daemon
 
 on property:ro.cbd.disable=1
     stop cpboot-daemon
