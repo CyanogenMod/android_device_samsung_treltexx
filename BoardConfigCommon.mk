@@ -106,6 +106,7 @@ TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Hardware
 BOARD_HARDWARE_CLASS += device/samsung/treltexx/cmhw
+BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
 
 # WIFI
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
