@@ -1,7 +1,6 @@
-service hwrev-parser /sbin/hwrevision
+# Parse hardware revision (needs to happen before cbd starts)
+service modemloader /system/bin/modemloader
     class core
-    user root
-    group root
     oneshot
 
 service cpboot-daemon /sbin/cbd -d -tstem7400 -bh -mh -p 13
