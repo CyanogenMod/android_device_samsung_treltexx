@@ -16,13 +16,6 @@ PRODUCT_PACKAGES += \
     ueventd.universal5433.rc
 
 ###########################################################
-### BCMDHD DRIVER
-###########################################################
-
-PRODUCT_PACKAGES += \
-    init.sec.boot.sh
-
-###########################################################
 ### PERMISSONS
 ###########################################################
 
@@ -107,6 +100,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     macloader \
+    wifiloader \
     hostapd \
     libwpa_client \
     wpa_supplicant
