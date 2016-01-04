@@ -722,6 +722,7 @@ service ipsec-daemon /system/bin/IPSecService
     group system net_raw inet net_admin
 
 service charger /charger
+    seclabel u:r:healthd:s0
     class charger
 
 # SensorHub (Location Hub)
