@@ -64,6 +64,7 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53
 
 # frameworks/native/services/surfaceflinger
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 5
+BOARD_EGL_NEEDS_HANDLE_VALUE := true
 
 # Exynos display
 BOARD_USES_VIRTUAL_DISPLAY := true
