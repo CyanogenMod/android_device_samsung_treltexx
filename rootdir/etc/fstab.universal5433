@@ -6,13 +6,13 @@
 
 /dev/block/mmcblk0p9     /boot               emmc      defaults                                                                                         defaults
 /dev/block/mmcblk0p10    /recovery           emmc      defaults                                                                                         defaults
+/dev/block/mmcblk0p19    /cache              f2fs      rw,nosuid,nodev,noatime,nodiratime,inline_xattr                             wait,check,formattable
+/dev/block/mmcblk0p21    /data               f2fs      rw,nosuid,nodev,noatime,nodiratime,inline_xattr                             wait,check,formattable,encryptable=footer
 /dev/block/mmcblk0p18    /system             ext4      ro,errors=panic,noload                                                                           wait,verify
-/dev/block/mmcblk0p3     /efs                ext4      nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit,data=ordered,errors=panic      wait,check
-/dev/block/mmcblk0p19    /cache              ext4      noatime,nosuid,nodev,noauto_da_alloc,journal_async_commit,errors=panic      wait,check
-/dev/block/mmcblk0p21    /data               ext4      noatime,nosuid,nodev,noauto_da_alloc,journal_async_commit,errors=panic    wait,check,encryptable=footer
-
+/dev/block/mmcblk0p3     /efs                ext4      nosuid,nodev,noatime,noauto_da_alloc,discard,journal_async_commit,data=ordered,errors=panic      wait,check,notrim
+/dev/block/mmcblk0p19    /cache              ext4      noatime,nosuid,nodev,noauto_da_alloc,journal_async_commit,errors=panic      wait,check,formattable
+/dev/block/mmcblk0p21    /data               ext4      noatime,nosuid,nodev,noauto_da_alloc,journal_async_commit,errors=panic      wait,check,formattable,encryptable=footer
 
 # VOLD
 /devices/15560000.dwmmc2/mmc_host/mmc1*            auto    auto	   defaults    voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/15400000.usb/15400000.dwc3/xhci-hcd*      auto    auto    defaults    voldmanaged=usbdisk:auto
-
