@@ -13,6 +13,5 @@
 
 
 # VOLD
-/devices/15560000.dwmmc2/mmc_host/mmc1*            auto    auto	   defaults    voldmanaged=sdcard1:auto,encryptable=userdata
-/devices/15400000.usb/15400000.dwc3/xhci-hcd*      auto    auto    defaults    voldmanaged=usbdisk:auto
-
+/devices/15560000.dwmmc2/mmc_host/mmc1*            auto    auto    defaults    voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/15400000.usb/15400000.dwc3/xhci-hcd*      auto    auto    defaults    voldmanaged=usb:auto
