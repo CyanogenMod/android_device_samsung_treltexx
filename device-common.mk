@@ -211,6 +211,9 @@ PRODUCT_PACKAGES += \
 ### CAMERA
 ###########################################################
 
+PRODUCT_PACKAGES += \
+    Snap
+
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
