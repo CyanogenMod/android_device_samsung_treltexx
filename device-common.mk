@@ -61,9 +61,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bq.gpu_to_cpu_unsupported=1
 
 PRODUCT_PACKAGES += \
-    gralloc.exynos5 \
-    hwcomposer.exynos5 \
-    memtrack.exynos5
+    gralloc.exynos5
 
 PRODUCT_PACKAGES += \
     libion
@@ -164,24 +162,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:system/etc/media_profiles.xml
 
-# Stagefright and device specific modules
-PRODUCT_PACKAGES += \
-    libstagefrighthw \
-    libExynosOMX_Core
-
-# Video codecs
-PRODUCT_PACKAGES += \
-    libOMX.Exynos.AVC.Decoder \
-    libOMX.Exynos.HEVC.Decoder \
-    libOMX.Exynos.MPEG4.Decoder \
-    libOMX.Exynos.MPEG4.Encoder \
-    libOMX.Exynos.VP8.Decoder \
-    libOMX.Exynos.WMV.Decoder
-
-# H.264 encoder is broken
-#PRODUCT_PACKAGES += \
-#    libOMX.Exynos.AVC.Encoder
-
 ###########################################################
 ### POWER
 ###########################################################
@@ -251,13 +231,6 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
 ###########################################################
-### MOBICORE
-###########################################################
-
-PRODUCT_PACKAGES += \
-    mcDriverDaemon
-
-###########################################################
 ### PACKAGES
 ###########################################################
 
@@ -310,6 +283,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_large_cache_height=4096
 
 # call Samsung LSI board support package
+$(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5433/exynos5433.mk)
 
 # call the proprietary setup
