@@ -165,6 +165,8 @@ enum {
     /* SEC Private usage , for Overlay path at HWC */
     GRALLOC_USAGE_HWC_HWOVERLAY         = 0x20000000,
 #endif
+
+    GRALLOC_USAGE_GPU_BUFFER            = 0x00800000,
 };
 
 /*****************************************************************************/
