@@ -368,8 +368,8 @@ on fs
     chmod 0750 /persdata/absolute
 
 # MTP permission
-    chmod 0660 /dev/usb_mtp_gadget
-    chown system mtp /dev/usb_mtp_gadget
+    chmod 0660 /dev/mtp_usb
+    chown system mtp /dev/mtp_usb
 
 # terminal mode
     chmod 0660 /sys/class/android_usb/android0/terminal_version
