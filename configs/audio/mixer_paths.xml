@@ -248,7 +248,7 @@
         <ctl name="HPOUT3R Input 1" value="AIF1RX2" />
     </path>
 
-    <path name="scenario-earpiece-incall-nb">
+    <path name="scenario-earpiece-incall-wb">
         <ctl name="ASRC RATE 1" value="SYNCCLK rate 3" />
         <ctl name="DSP4 Rate" value="SYNCCLK rate 3" />
         <ctl name="DSP4 Aux 2" value="None" />
