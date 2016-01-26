@@ -244,42 +244,11 @@ on charger
     chmod 0664 /sys/class/power_supply/battery/batt_temp_table
     chown system radio /sys/class/power_supply/battery/batt_temp_table
 
-service scs /system/bin/scs
-    class main
-    user system
-    group system
-    oneshot
-
-service epmd /system/bin/epmd
-    class main
-    socket epm stream 0660 system system
-    socket ppm stream 0660 system system
-    ioprio be 2
-
-# icd
-service icd /system/bin/icd
-    class main
-    user system
-    group system log
-    onrestart check_icd
-    oneshot
-
 # MobiCore startup
 service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF000000000000000000000001.drbin -r /system/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin -r /system/app/mcRegistry/ffffffffd00000000000000000000016.tlbin
     class core
     user system
     group system
-
-# icd
-on property:init.svc.media=restarting
-    check_icd
-    start icd
-
-# Sensorhub service
-service sensorhubservice /system/bin/sensorhubservice
-    class main
-    user system
-    group input
 
 # for Bluetooth Tethering
 service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
