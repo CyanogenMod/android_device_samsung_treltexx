@@ -153,6 +153,9 @@ TARGET_IGNORE_RO_BOOT_REVISION := true
 # RIL.java overwrite
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 
+# frameworks/native/libs/binder/Parcel.cpp
+COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.universal5433
 
