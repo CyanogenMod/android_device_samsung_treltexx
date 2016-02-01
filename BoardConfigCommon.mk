@@ -67,7 +67,6 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53
 # misses the time to swap buffers (in cases where it takes 16ms or
 # less). Use 3 to avoid timing issues.
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-BOARD_EGL_NEEDS_HANDLE_VALUE := true
 
 # Exynos display
 BOARD_USES_VIRTUAL_DISPLAY := true
