@@ -18,6 +18,11 @@ on fs
     chmod 0660 /sys/devices/virtual/misc/umts_dm0/dm_state
     chown radio system /sys/devices/virtual/misc/umts_dm0/dm_state
 
+# Parse hardware revision (needs to happen before cbd starts)
+service modemloader /system/bin/modemloader
+    class core
+    oneshot
+
 service cpboot-daemon /sbin/cbd -d -t xmm72xx_lli -b l -m l -p 13
     class main
     user root
