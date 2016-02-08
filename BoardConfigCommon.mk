@@ -48,6 +48,10 @@ TARGET_KERNEL_SOURCE := kernel/samsung/trelte
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Extended filesystem support
+TARGET_KERNEL_HAVE_EXFAT := true
+TARGET_KERNEL_HAVE_NTFS := true
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
