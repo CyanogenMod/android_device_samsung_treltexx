@@ -162,7 +162,7 @@ TARGET_IGNORE_RO_BOOT_REVISION := true
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.universal5433
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.universal5433
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
