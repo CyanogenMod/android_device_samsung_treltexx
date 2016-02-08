@@ -166,3 +166,29 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.universal5433
 # SELinux
 BOARD_SEPOLICY_DIRS := \
 	device/samsung/treltexx/sepolicy
+
+# TWRP
+#RECOVERY_VARIANT := twrp
+#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/twrp.fstab
+
+DEVICE_RESOLUTION := 1440x2560
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+
+# Use our own init.rc without setting up functionfs
+TARGET_RECOVERY_DEVICE_MODULES += prebuilt_file_contexts init.recovery.usb.rc
+
+TW_BRIGHTNESS_PATH := /sys/class/backlight/panel/brightness
+TW_MAX_BRIGHTNESS := 255
+
+BOARD_HAS_NO_REAL_SDCARD := true
+RECOVERY_SDCARD_ON_DATA := true
+
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_DOWNLOAD_MODE := true
+
+# Provide our own init.recovery.usb.rc
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+
+# The kernel has exfat support.
+TW_NO_EXFAT_FUSE := true
