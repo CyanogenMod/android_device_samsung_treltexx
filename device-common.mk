@@ -148,6 +148,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
+    audio_hal.force_wideband=true \
     audio_hal.disable_two_mic=true
 
 ###########################################################
