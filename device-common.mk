@@ -223,23 +223,14 @@ PRODUCT_COPY_FILES += \
 ###########################################################
 
 PRODUCT_PACKAGES += \
-    charger_res_images \
-    charger
-
-###########################################################
-### USB
-###########################################################
-
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
+    charger_res_images
 
 ###########################################################
 ### PACKAGES
 ###########################################################
 
 PRODUCT_PACKAGES += \
-    SamsungServiceMode \
-    Torch
+    SamsungServiceMode
 
 ###########################################################
 ### SYMBOLS FOR BLOBS
