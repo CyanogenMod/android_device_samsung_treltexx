@@ -259,6 +259,9 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 ### DALVIK/ART
 ###########################################################
 
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.sys.fw.dex2oat_thread_count=4
+
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
     dalvik.vm.heapgrowthlimit=256m \
