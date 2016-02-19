@@ -246,6 +246,9 @@
          device from the display on/off state. -->
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
 
+    <!-- Enable doze powersaving -->		
+    <bool name="config_enableAutoPowerModes">true</bool>
+
     <!-- Allow screen mirroring/miracast -->
     <bool name="config_enableWifiDisplay">true</bool>
 
