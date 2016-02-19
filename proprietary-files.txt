@@ -94,6 +94,13 @@ etc/lhd.conf
 bin/lhd
 lib/hw/sensors.universal5433.so
 
+### Sensorhub
+bin/sensorhubservice
+lib/libgnustl_shared.so
+lib/libsensorhub.so
+lib/libsensorhubservice.so
+lib/hw/sensorhubs.universal5433.so
+
 ### Widevine
 lib/liboemcrypto.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
