@@ -1,6 +1,6 @@
 # Inherit device configuration
 $(call inherit-product, device/samsung/treltexx/device.mk)
-$(call inherit-product, device/samsung/treltexx/device-common.mk)
+$(call inherit-product, device/samsung/trelte-common/device-common.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
