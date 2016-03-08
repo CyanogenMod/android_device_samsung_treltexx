@@ -1,32 +1,12 @@
-on init
-    symlink  /sys/devices/15510000.usb/ehci_power /dev/ehci_power
-    symlink  /sys/devices/10f24000.mipi-lli /dev/mipi-lli
-
-    write /sys/class/net/rmnet0/queues/rx-0/rps_cpus 1
-    write /sys/class/net/rmnet1/queues/rx-0/rps_cpus 1
-    write /sys/class/net/rmnet2/queues/rx-0/rps_cpus 1
-    write /sys/class/net/rmnet3/queues/rx-0/rps_cpus 1
-    write /sys/class/net/rmnet4/queues/rx-0/rps_cpus 1
-    write /sys/class/net/rmnet5/queues/rx-0/rps_cpus 1
-    write /sys/class/net/rmnet6/queues/rx-0/rps_cpus 1
-    write /sys/class/net/rmnet7/queues/rx-0/rps_cpus 1
-    write /proc/sys/net/core/netdev_max_backlog 8192
-
-on fs
-# MIF
-    chown radio radio sys/devices/virtual/misc/multipdp/waketime
-    chmod 0660 /sys/devices/virtual/misc/umts_dm0/dm_state
-    chown radio system /sys/devices/virtual/misc/umts_dm0/dm_state
-
 # Parse hardware revision (needs to happen before cbd starts)
 service modemloader /system/bin/modemloader
     class core
     oneshot
 
-service cpboot-daemon /sbin/cbd -d -t xmm72xx_lli -b l -m l -p 13
+service cpboot-daemon /sbin/cbd -d -tstem7400 -bh -mh -p 13
     class main
     user root
-    group radio cache inet misc audio sdcard_r sdcard_rw log shell
+    group radio cache inet misc audio sdcard_rw log sdcard_r shell
     seclabel u:r:cpboot-daemon:s0
 
 on property:ro.cbd.disable=1

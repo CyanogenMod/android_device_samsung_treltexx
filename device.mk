@@ -1,4 +1,4 @@
-LOCAL_PATH := device/samsung/trhpltexx
+LOCAL_PATH := device/samsung/treltexx
 
 ###########################################################
 ### FLAT DEVICE TREE
