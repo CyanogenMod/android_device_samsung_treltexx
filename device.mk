@@ -21,3 +21,6 @@ PRODUCT_PACKAGES += \
 # cpboot-daemon for modem
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ril/sbin/cbd:root/sbin/cbd
+
+# call the proprietary setup
+$(call inherit-product-if-exists, vendor/samsung/treltexx/treltexx-vendor.mk)
