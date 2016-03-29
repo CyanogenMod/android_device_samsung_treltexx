@@ -968,14 +968,12 @@
     <!-- ### Volume ### -->
 
     <path name="volume-builtin-mic-default">
-        <ctl name="IN1L Volume" value="18" />
-        <ctl name="IN1L Digital Volume" value="128" />
-        <ctl name="LHPF1 Input 1 Volume" value="32" />
+        <ctl name="IN1R Digital Volume" value="160" />
     </path>
 
     <path name="volume-builtin-mic-incall">
-        <ctl name="IN1L Volume" value="24" />
-        <ctl name="IN1L Digital Volume" value="128" />
+        <ctl name="IN1R Digital Volume" value="126" />
+        <ctl name="LHPF1 Input 1 Volume" value="32" />
     </path>
 
     <!--
@@ -1035,14 +1033,12 @@
     <!-- ### Volume ### -->
 
     <path name="volume-back-mic-default">
-        <ctl name="IN3L Volume" value="18" />
-        <ctl name="IN3L Digital Volume" value="140" />
-        <ctl name="LHPF2 Input 1 Volume" value="32" />
+        <ctl name="IN3L Digital Volume" value="160" />
     </path>
 
     <path name="volume-back-mic-incall">
-        <ctl name="IN3L Volume" value="23" />
-        <ctl name="IN3L Digital Volume" value="142" />
+        <ctl name="IN3L Digital Volume" value="126" />
+        <ctl name="LHPF2 Input 1 Volume" value="32" />
     </path>
 
     <!--
@@ -1064,16 +1060,6 @@
     </path>
 
     <!-- ### Scenario ### -->
-
-    <path name="scenario-two-mic-earpiece-default">
-        <path name="scenario-builtin-mic-default" />
-        <path name="scenario-back-mic-default" />
-    </path>
-
-    <path name="scenario-two-mic-speaker-default">
-        <path name="scenario-builtin-mic-default" />
-        <path name="scenario-back-mic-default" />
-    </path>
 
     <path name="scenario-two-mic-earpiece-incall-nb">
         <path name="scenario-builtin-mic-earpiece-incall-nb" />
@@ -1148,8 +1134,7 @@
     <!-- ### Volume ### -->
 
     <path name="volume-third-mic-default">
-        <ctl name="IN4L Digital Volume" value="124" />
-        <ctl name="LHPF1 Input 1 Volume" value="32" />
+        <ctl name="IN3R Digital Volume" value="160" />
     </path>
 
     <!--
@@ -1512,7 +1497,7 @@
     <path name="communication-earpiece">
         <path name="verb-default" />
 
-        <path name="scenario-earpiece-loopback" />
+        <path name="scenario-earpiece-default" />
         <path name="volume-earpiece-default" />
     </path>
 
@@ -1607,12 +1592,11 @@
         -->
     </path>
 
-    <path name="voice-rec-two-mic">
+    <path name="voice-rec-mic">
         <path name="channel-left" />
 
         <path name="scenario-builtin-mic-default" />
-        <path name="scenario-back-mic-default" />
-        <path name="volume-two-mic-default" />
+        <path name="volume-builtin-mic-default" />
     </path>
 
     <path name="voice-headset-mic">
@@ -1675,14 +1659,14 @@
         <path name="scenario-sco-headset-mic-default" />
     </path>
 
-    <path name="communication-earpiece-two-mic">
+    <path name="communication-earpiece-mic">
         <path name="channel-left" />
 
         <path name="scenario-builtin-mic-earpiece-communication" />
         <path name="volume-builtin-mic-default" />
     </path>
 
-    <path name="communication-speaker-two-mic">
+    <path name="communication-speaker-mic">
         <path name="channel-left" />
 
         <path name="scenario-builtin-mic-speaker-communication" />
