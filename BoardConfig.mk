@@ -8,7 +8,7 @@ TARGET_KERNEL_CONFIG := cm_exynos5433-trelte_defconfig
 BOARD_MODEM_TYPE := m7450
 
 # Recovery
-TARGET_OTA_ASSERT_DEVICE := trelte,treltexx
+TARGET_OTA_ASSERT_DEVICE := tre3g,trelte,treltexx
 
 # Inherit common board flags
 include device/samsung/trelte-common/BoardConfigCommon.mk
