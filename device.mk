@@ -20,7 +20,7 @@ PRODUCT_PACKAGES += \
 
 # cpboot-daemon for modem
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ril/sbin/cbd:root/sbin/cbd
+    $(LOCAL_PATH)/ril/sbin/cbd:system/bin/cbd
 
 ###########################################################
 ### AUDIO
