@@ -3,7 +3,7 @@ service modemloader /system/bin/modemloader
     class core
     oneshot
 
-service cpboot-daemon /sbin/cbd -d -tstem7400 -bh -mh -p 13
+service cpboot-daemon /system/cbd -d -tstem7400 -bh -mh -p 13
     class main
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell
