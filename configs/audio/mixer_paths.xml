@@ -1287,7 +1287,7 @@
 
     <path name="verb-default">
         <ctl name="AIF2 Mode" value="Master" />
-        <ctl name="VI SENSING Switc" value="0" />
+        <ctl name="VI SENSING SWITCH" value="0" />
 
         <!-- CP->HP -->
         <ctl name="HPOUT1L Input 2" value="None" />
