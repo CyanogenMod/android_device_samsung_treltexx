@@ -1,30 +1,18 @@
 LOCAL_PATH := device/samsung/treltexx
 
-###########################################################
-### FLAT DEVICE TREE
-###########################################################
-
+# Flat device tree
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/dtb.img:dt.img
 
-###########################################################
-### RAMDISK
-###########################################################
-
+# Ramdisk
 PRODUCT_PACKAGES += \
     init.modem.rc
 
-###########################################################
-### AUDIO
-###########################################################
-
+# audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
-###########################################################
-### BLUETOOTH
-###########################################################
-
+# bluetooth
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 
