@@ -12,3 +12,13 @@ ro.telephony.default_network=9
 ro.telephony.ril_class=SlteRIL
 persist.radio.apm_sim_not_pwdn=1
 persist.radio.add_power_save=1
+
+# netmgrd should be false in EVO-RIL model
+ro.use_data_netmgrd=false
+
+# qos will temporary false while supporting qos in EVO-RIL.
+persist.data.netmgrd.qos.enable=false
+ro.data.large_tcp_window_size=true
+
+# System prop to turn on CdmaLTEPhone always
+telephony.lteOnCdmaDevice=0
